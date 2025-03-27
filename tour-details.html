@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details | Mulla Travels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tour-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .tour-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .tour-gallery {
+            margin-top: 30px;
+        }
+        .gallery-item {
+            cursor: pointer;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .tour-highlights li {
+            margin-bottom: 10px;
+        }
+        .price-badge {
+            font-size: 1.5rem;
+            padding: 15px 20px;
+        }
+        .itinerary-day {
+            border-left: 3px solid #0d6efd;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mulla Travels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tours.html">Tours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tour Hero Section -->
+    <section class="tour-hero" id="tour-hero-image">
+        <div class="tour-hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-md-8 text-white pb-5">
+                    <h1 class="display-4" id="tour-title">Bali Adventure</h1>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="me-4">
+                            <i class="fas fa-clock me-2"></i>
+                            <span id="tour-duration">7 days</span>
+                        </div>
+                        <div class="me-4">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <span id="tour-location">Bali, Indonesia</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-star text-warning me-2"></i>
+                            <span id="tour-rating">4.8 (24 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pb-5">
+                    <div class="bg-white p-4 rounded shadow text-center">
+                        <h4 class="text-primary mb-3">From <span id="tour-price">$899</span></h4>
+                        <a href="booking.html" class="btn btn-primary btn-lg w-100 mb-3">
+                            <i class="fas fa-calendar-check me-2"></i> Book Now
+                        </a>
+                        <small class="text-muted">Limited spots available</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Tour Overview</h2>
+                    <p id="tour-description" class="lead">
+                        Experience the tropical paradise of Bali with our 7-day adventure tour. 
+                        This carefully curated itinerary takes you through Bali's most stunning 
+                        landscapes, vibrant culture, and breathtaking beaches.
+                    </p>
+
+                    <h3 class="mt-5 mb-4">Highlights</h3>
+                    <ul class="tour-highlights" id="tour-highlights">
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Visit the iconic Tanah Lot temple at sunset</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Explore the lush Tegallalang Rice Terraces</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Relax at the beautiful beaches of Uluwatu</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Experience traditional Balinese dance performance</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Enjoy a day of snorkeling in crystal clear waters</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-4">Itinerary</h3>
+                    <div id="tour-itinerary">
+                        <div class="itinerary-day">
+                            <h4>Day 1: Arrival in Bali</h4>
+                            <p>Arrive at Ngurah Rai International Airport and transfer to your hotel in Seminyak. Rest and relax after your flight.</p>
+                        </div>
+                        <div class="itinerary-day">
+                            <h4>Day 2: Ubud Cultural Tour</h4>
+                            <p>Visit the Sacred Monkey Forest, Ubud Palace, and local art markets. Enjoy a traditional Balinese dance performance in the evening.</p>
+                        </div>
+                        <!-- More days would be added here -->
+                    </div>
+
+                    <h3 class="mt-5 mb-4">Gallery</h3>
+                    <div class="row tour-gallery" id="lightgallery">
+                        <div class="col-md-4 gallery-item" data-src="images/bali-1.jpg">
+                            <img src="images/bali-1.jpg" class="img-fluid rounded" alt="Bali Temple">
+                        </div>
+                        <div class="col-md-4 gallery-item" data-src="images/bali-2.jpg">
+                            <img src="images/bali-2.jpg" class="img-fluid rounded" alt="Bali Rice Terraces">
+                        </div>
+                        <div class="col-md-4 gallery-item" data-src="images/bali-3.jpg">
+                            <img src="images/bali-3.jpg" class="img-fluid rounded" alt="Bali Beach">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow-sm sticky-top" style="top: 20px;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Tour Details</h4>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-calendar-alt text-primary me-2"></i> Duration</span>
+                                    <span id="tour-duration-side">7 days</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-users text-primary me-2"></i> Group Size</span>
+                                    <span>2-12 people</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-language text-primary me-2"></i> Language</span>
+                                    <span>English, Indonesian</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-utensils text-primary me-2"></i> Meals</span>
+                                    <span>Breakfast daily, 3 lunches</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-bed text-primary me-2"></i> Accommodation</span>
+                                    <span>4-star hotels</span>
+                                </li>
+                            </ul>
+                            <div class="d-grid gap-2">
+                                <a href="booking.html" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-calendar-check me-2"></i> Book This Tour
+                                </a>
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-question-circle me-2"></i> Ask a Question
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Mulla Travels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script>
+        // Initialize lightGallery
+        lightGallery(document.getElementById('lightgallery'), {
+            selector: '.gallery-item',
+            download: false,
+            zoom: true,
+            fullScreen: true
+        });
+
+        // In a real app, this would load tour data from an API based on URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tourId = urlParams.get('id');
+            
+            // Sample data - would be fetched from API in real app
+            const tourData = {
+                id: 1,
+                title: "Bali Adventure",
+                description: "Experience the tropical paradise of Bali with our 7-day adventure tour. This carefully curated itinerary takes you through Bali's most stunning landscapes, vibrant culture, and breathtaking beaches.",
+                duration: "7 days",
+                location: "Bali, Indonesia",
+                price: 899,
+                rating: 4.8,
+                reviewCount: 24,
+                image: "images/bali-hero.jpg",
+                highlights: [
+                    "Visit the iconic Tanah Lot temple at sunset",
+                    "Explore the lush Tegallalang Rice Terraces",
+                    "Relax at the beautiful beaches of Uluwatu",
+                    "Experience traditional Balinese dance performance",
+                    "Enjoy a day of snorkeling in crystal clear waters"
+                ]
+            };
+
+            // Populate tour data
+            document.getElementById('tour-title').textContent = tourData.title;
+            document.getElementById('tour-duration').textContent = tourData.duration;
+            document.getElementById('tour-duration-side').textContent = tourData.duration;
+            document.getElementById('tour-location').textContent = tourData.location;
+            document.getElementById('tour-rating').textContent = `${tourData.rating} (${tourData.reviewCount} reviews)`;
+            document.getElementById('tour-price').textContent = `$${tourData.price}`;
+            document.getElementById('tour-description').textContent = tourData.description;
+            document.getElementById('tour-hero-image').style.backgroundImage = `url(${tourData.image})`;
+
+            // Populate highlights
+            const highlightsList = document.getElementById('tour-highlights');
+            tourData.highlights.forEach(highlight => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle text-primary me-2"></i> ${highlight}`;
+                highlightsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
